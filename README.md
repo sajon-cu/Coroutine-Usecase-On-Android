@@ -1,34 +1,3 @@
-![CoroutineUsecasesOnAndroid](documentation/images/Logo-new.png)
-
-# Kotlin Coroutines - Use Cases on Android
-
-🎓 Learning Kotlin Coroutines for Android by example. 
-
-🚀 Sample implementations for real-world Android use cases. 
-
-🛠 Unit tests included!
-
-This repository is intended to be a "Playground Project". You can quickly look up and play around with the different Coroutine Android implementations.
-In the `playground` package you can play around with Coroutines examples that run directly on the JVM.
-
-## 🔧 Project Setup
-
-Every use case is using its own `Activity` and `JetPack ViewModel`. The `ViewModel`s contain all the interesting Coroutine related code.
-`Activities` listen to `LiveData` events of the `ViewModel` and render received `UiState`s.
-
-This project is using retrofit/okhttp together with a `MockNetworkInterceptor`. This lets you define how the API should behave.
-Everything can be configured: http status codes, response data and delays. Every use case defines a certain behaviour of the Mock API.
-The API has 2 endpoints. One returns the names of the most recent Android versions and the other one returns the features of a certain
-Android version.
-
-Unit Tests exist for most use cases.
-
-## 🍿️ Related Videos
-* Kotlin Coroutines Fundamentals Playlist [[link](https://www.youtube.com/playlist?list=PL-1MzrWZIYU2a4TGbSXeXzfet8Br3cya1)]
-* Kotlin Coroutines Exception Handling explained [[link](https://youtu.be/Pgek3_3vPU8)]
-* How to avoid 5 common mistakes when using Kotlin Coroutines [[link](https://youtu.be/coq9XDMB-yU)]
-* Best Practices for using Kotlin Coroutines in Android Development [[link](https://youtu.be/tVDCpjqQ1Ro)]
-
 ## ✍️ Related blog posts
 * 7 Common Mistakes you might be making when using Kotlin Coroutines [[link](https://www.lukaslechner.com/7-common-mistakes-you-might-be-making-when-using-kotlin-coroutines/)]
 * Why exception handling with Kotlin Coroutines is so hard and how to successfully master it! [[link](https://www.lukaslechner.com/why-exception-handling-with-kotlin-coroutines-is-so-hard-and-how-to-successfully-master-it/)]
