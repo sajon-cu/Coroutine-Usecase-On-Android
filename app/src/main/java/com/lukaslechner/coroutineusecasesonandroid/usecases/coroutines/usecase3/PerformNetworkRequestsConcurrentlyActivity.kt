@@ -7,6 +7,8 @@ import com.lukaslechner.coroutineusecasesonandroid.R
 import com.lukaslechner.coroutineusecasesonandroid.base.BaseActivity
 import com.lukaslechner.coroutineusecasesonandroid.base.useCase3Description
 import com.lukaslechner.coroutineusecasesonandroid.databinding.ActivityPerformnetworkrequestsconcurrentlyBinding
+import com.lukaslechner.coroutineusecasesonandroid.mock.AndroidVersion
+import com.lukaslechner.coroutineusecasesonandroid.mock.VersionFeatures
 import com.lukaslechner.coroutineusecasesonandroid.utils.fromHtml
 import com.lukaslechner.coroutineusecasesonandroid.utils.setGone
 import com.lukaslechner.coroutineusecasesonandroid.utils.setVisible
@@ -95,5 +97,20 @@ class PerformNetworkRequestsConcurrentlyActivity : BaseActivity() {
     private fun disableButtons() {
         binding.btnRequestsSequentially.isEnabled = false
         binding.btnRequestsConcurrently.isEnabled = false
+    }
+
+    fun buildString() {
+        val features = listOf(
+            VersionFeatures(AndroidVersion(27, "Oreo"), listOf("Neural networks API.", "Shared memory API.", "WallpaperColors API.",)),
+            VersionFeatures(AndroidVersion(28, "Pie"), listOf("Neural networks API.", "Shared memory API.", "WallpaperColors API.",)),
+            VersionFeatures(AndroidVersion(29, "Android 10"), listOf("Neural networks API.", "Shared memory API.", "WallpaperColors API.",)),
+        )
+
+        val featuresString = features.joinToString("<br><bar>") { featuresVersion ->
+            "New feature of ${featuresVersion.androidVersion.name} <br> <br> ${featuresVersion.features.joinToString(
+                prefix = "- ",
+                separator = "<br>- "
+            )}"
+        }
     }
 }
